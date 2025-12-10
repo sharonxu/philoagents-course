@@ -1,14 +1,22 @@
 class ApiService {
   constructor() {
-    const isHttps = window.location.protocol === 'https:';
+    // Check for production deployment
+    const hostname = window.location.hostname;
     
-    if (isHttps) {
+    if (hostname === 'cartesialabs.com' || hostname.includes('pages.dev')) {
+      // Production: use deployed Railway backend
+      this.apiUrl = 'https://philoagents-api-production.up.railway.app';
+    } else if (window.location.protocol === 'https:') {
+      // GitHub Codespaces
       console.log('Using GitHub Codespaces');
       const currentHostname = window.location.hostname;
       this.apiUrl = `https://${currentHostname.replace('8080', '8000')}`;
     } else {
+      // Local development
       this.apiUrl = 'http://localhost:8000';
     }
+    
+    console.log('API URL:', this.apiUrl);
   }
 
   async request(endpoint, method, data) {
