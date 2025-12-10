@@ -5,7 +5,7 @@ class ApiService {
     
     if (hostname === 'cartesialabs.com' || hostname.includes('pages.dev')) {
       // Production: use deployed Railway backend
-      this.apiUrl = 'https://philoagents-api-production.up.railway.app';
+      this.apiUrl = 'https://philoagents-course-production.up.railway.app';
     } else if (window.location.protocol === 'https:') {
       // GitHub Codespaces
       console.log('Using GitHub Codespaces');
