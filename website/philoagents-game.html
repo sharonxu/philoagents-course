@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play PhiloAgents</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .play-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 24px 60px;
+            text-align: center;
+        }
+        
+        .play-content {
+            max-width: 700px;
+        }
+        
+        .play-content h1 {
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 800;
+            color: var(--dialog-bg);
+            margin-bottom: 20px;
+        }
+        
+        .play-content p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+        
+        .setup-box {
+            background: var(--dialog-bg);
+            border: 4px solid var(--dialog-border);
+            border-radius: var(--radius);
+            padding: 32px;
+            text-align: left;
+            color: var(--dialog-text);
+            margin-bottom: 32px;
+        }
+        
+        .setup-box h2 {
+            font-size: 20px;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .setup-box ol {
+            margin: 0;
+            padding-left: 24px;
+        }
+        
+        .setup-box li {
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        
+        .setup-box code {
+            background: rgba(0,0,0,0.3);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: var(--font-pixel);
+            font-size: 11px;
+            display: inline-block;
+            margin: 4px 0;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--grass-dark);
+            font-weight: 600;
+            margin-top: 24px;
+        }
+        
+        .back-link:hover {
+            color: var(--grass);
+        }
+    </style>
+</head>
+<body>
+    <div class="page-bg"></div>
+    
+    <!-- Nav -->
+    <nav class="nav">
+        <a href="/" class="nav-brand">
+            <img src="assets/logo.png" alt="">
+            <span>PhiloAgents</span>
+        </a>
+        <div class="nav-menu">
+            <a href="/#about">About</a>
+            <a href="/#philosophers">Philosophers</a>
+            <a href="/#learn">Learn</a>
+            <a href="https://github.com/sharonxu/philoagents-course" target="_blank" class="nav-btn">GitHub</a>
+        </div>
+    </nav>
+
+    <main class="play-page">
+        <div class="play-content">
+            <h1>🎮 Play PhiloAgents</h1>
+            <p>PhiloAgents runs locally on your machine, connecting to AI services to power the philosophers. Follow these steps to start your journey!</p>
+            
+            <div class="setup-box">
+                <h2>Quick Setup</h2>
+                <ol>
+                    <li>
+                        <strong>Clone the repository:</strong><br>
+                        <code>git clone https://github.com/sharonxu/philoagents-course.git</code>
+                    </li>
+                    <li>
+                        <strong>Get a free Groq API key:</strong><br>
+                        Sign up at <a href="https://console.groq.com" target="_blank" style="color: var(--cherry);">console.groq.com</a> and add it to your <code>.env</code> file
+                    </li>
+                    <li>
+                        <strong>Start the infrastructure:</strong><br>
+                        <code>cd philoagents-course</code><br>
+                        <code>make infrastructure-up</code>
+                    </li>
+                    <li>
+                        <strong>Populate philosopher memories:</strong><br>
+                        <code>make create-long-term-memory</code>
+                    </li>
+                    <li>
+                        <strong>Open the game:</strong><br>
+                        Visit <code>http://localhost:8080</code> in your browser
+                    </li>
+                </ol>
+            </div>
+            
+            <a href="https://github.com/sharonxu/philoagents-course/blob/main/INSTALL_AND_USAGE.md" class="btn btn-primary" target="_blank">
+                Full Setup Guide
+            </a>
+            
+            <br>
+            <a href="/" class="back-link">← Back to Home</a>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
