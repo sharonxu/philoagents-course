@@ -270,6 +270,18 @@
                 }, 
                 {
                  "height":0,
+                 "id":300,
+                 "name":"Sharon",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1220,
+                 "y":400
+                }, 
+                {
+                 "height":0,
                  "id":285,
                  "name":"Turing",
                  "point":true,

@@ -43,7 +43,9 @@
     },
     {
         "id": "ada_lovelace",
-        "urls": []
+        "urls": [
+            "https://plato.stanford.edu/entries/ada-countess-of-lovelace/"
+        ]
     },
     {
         "id": "turing",
@@ -53,14 +55,14 @@
     },
     {
         "id": "searle",
-        "urls": []
+        "urls": [
+            "https://plato.stanford.edu/entries/chinese-room/"
+        ]
     },
     {
         "id": "chomsky",
-        "urls": []
-    },
-    {
-        "id": "dennett",
-        "urls": []
+        "urls": [
+            "https://plato.stanford.edu/entries/chomsky/"
+        ]
     }
 ]

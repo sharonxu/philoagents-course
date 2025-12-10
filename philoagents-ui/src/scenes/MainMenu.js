@@ -20,26 +20,28 @@ export class MainMenu extends Scene {
         this.createButton(centerX, startY + buttonSpacing, 'Instructions', () => {
             this.showInstructions();
         });
-
-        this.createButton(centerX, startY + buttonSpacing * 2, 'Support Philoagents', () => {
-            window.open('https://github.com/neural-maze/philoagents-course', '_blank');
-        });
     }
 
     createButton(x, y, text, callback) {
-        const buttonWidth = 350;
-        const buttonHeight = 60;
-        const cornerRadius = 20;
-        const maxFontSize = 28;
-        const padding = 10;
+        const buttonWidth = 280;
+        const buttonHeight = 52;
+        const cornerRadius = 12;
+        const maxFontSize = 22;
+        const padding = 20;
 
+        // Outer shadow/border for depth
         const shadow = this.add.graphics();
-        shadow.fillStyle(0x666666, 1);
-        shadow.fillRoundedRect(x - buttonWidth / 2 + 4, y - buttonHeight / 2 + 4, buttonWidth, buttonHeight, cornerRadius);
+        shadow.fillStyle(0x2a3a50, 1);
+        shadow.fillRoundedRect(x - buttonWidth / 2, y - buttonHeight / 2 + 4, buttonWidth, buttonHeight, cornerRadius);
 
+        // Main button with gradient-like effect
         const button = this.add.graphics();
-        button.fillStyle(0xffffff, 1);
+        button.fillStyle(0xfaf8f5, 1);
         button.fillRoundedRect(x - buttonWidth / 2, y - buttonHeight / 2, buttonWidth, buttonHeight, cornerRadius);
+        // Add border
+        button.lineStyle(3, 0x2a3a50, 1);
+        button.strokeRoundedRect(x - buttonWidth / 2, y - buttonHeight / 2, buttonWidth, buttonHeight, cornerRadius);
+        
         button.setInteractive(
             new Phaser.Geom.Rectangle(x - buttonWidth / 2, y - buttonHeight / 2, buttonWidth, buttonHeight),
             Phaser.Geom.Rectangle.Contains
@@ -52,9 +54,11 @@ export class MainMenu extends Scene {
             
             buttonText = this.add.text(x, y, text, {
                 fontSize: `${fontSize}px`,
-                fontFamily: 'Arial',
-                color: '#000000',
-                fontStyle: 'bold'
+                fontFamily: '"Trebuchet MS", "Segoe UI", Tahoma, sans-serif',
+                color: '#2a3a50',
+                fontStyle: 'bold',
+                stroke: '#ffffff',
+                strokeThickness: 0
             }).setOrigin(0.5);
 
             fontSize -= 1;
@@ -62,11 +66,13 @@ export class MainMenu extends Scene {
 
         button.on('pointerover', () => {
             this.updateButtonStyle(button, shadow, x, y, buttonWidth, buttonHeight, cornerRadius, true);
+            buttonText.setColor('#ffffff');
             buttonText.y -= 2;
         });
 
         button.on('pointerout', () => {
             this.updateButtonStyle(button, shadow, x, y, buttonWidth, buttonHeight, cornerRadius, false);
+            buttonText.setColor('#2a3a50');
             buttonText.y += 2;
         });
 
@@ -80,16 +86,22 @@ export class MainMenu extends Scene {
         shadow.clear();
         
         if (isHover) {
-            button.fillStyle(0x87CEEB, 1);
-            shadow.fillStyle(0x888888, 1);
-            shadow.fillRoundedRect(x - width / 2 + 2, y - height / 2 + 2, width, height, radius);
+            // Hover: golden/accent color
+            shadow.fillStyle(0x8b6914, 1);
+            shadow.fillRoundedRect(x - width / 2, y - height / 2 + 2, width, height, radius);
+            button.fillStyle(0xf0c040, 1);
+            button.fillRoundedRect(x - width / 2, y - height / 2, width, height, radius);
+            button.lineStyle(3, 0x8b6914, 1);
+            button.strokeRoundedRect(x - width / 2, y - height / 2, width, height, radius);
         } else {
-            button.fillStyle(0xffffff, 1);
-            shadow.fillStyle(0x666666, 1);
-            shadow.fillRoundedRect(x - width / 2 + 4, y - height / 2 + 4, width, height, radius);
+            // Normal: marble white
+            shadow.fillStyle(0x2a3a50, 1);
+            shadow.fillRoundedRect(x - width / 2, y - height / 2 + 4, width, height, radius);
+            button.fillStyle(0xfaf8f5, 1);
+            button.fillRoundedRect(x - width / 2, y - height / 2, width, height, radius);
+            button.lineStyle(3, 0x2a3a50, 1);
+            button.strokeRoundedRect(x - width / 2, y - height / 2, width, height, radius);
         }
-        
-        button.fillRoundedRect(x - width / 2, y - height / 2, width, height, radius);
     }
 
     showInstructions() {

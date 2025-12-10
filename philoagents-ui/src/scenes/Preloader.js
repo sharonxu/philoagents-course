@@ -34,11 +34,11 @@ export class Preloader extends Scene
         this.load.atlas("turing", "characters/turing/atlas.png", "characters/turing/atlas.json"); 
         this.load.atlas("searle", "characters/searle/atlas.png", "characters/searle/atlas.json"); 
         this.load.atlas("chomsky", "characters/chomsky/atlas.png", "characters/chomsky/atlas.json"); 
-        this.load.atlas("dennett", "characters/dennett/atlas.png", "characters/dennett/atlas.json"); 
         this.load.atlas("laozi", "characters/laozi/atlas.png", "characters/laozi/atlas.json"); 
         this.load.atlas("confucius", "characters/confucius/atlas.png", "characters/confucius/atlas.json"); 
         this.load.atlas("miguel", "characters/miguel/atlas.png", "characters/miguel/atlas.json");
-        this.load.atlas("paul", "characters/paul/atlas.png", "characters/paul/atlas.json"); 
+        this.load.atlas("paul", "characters/paul/atlas.png", "characters/paul/atlas.json");
+        this.load.atlas("sharon", "characters/sharon/atlas.png", "characters/sharon/atlas.json"); 
     }
 
     create ()

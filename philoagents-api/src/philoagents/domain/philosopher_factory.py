@@ -17,7 +17,6 @@ PHILOSOPHER_NAMES = {
     "turing": "Alan Turing",
     "chomsky": "Noam Chomsky",
     "searle": "John Searle",
-    "dennett": "Daniel Dennett",
 }
 
 PHILOSOPHER_STYLES = {
@@ -32,7 +31,6 @@ PHILOSOPHER_STYLES = {
     "turing": "Turing analyzes your ideas with a puzzle-solver's delight, turning philosophical AI questions into fascinating thought experiments. He'll introduce you to the concept of the 'Turing Test'. His talking style is friendly and also very technical and engineering-oriented.",
     "chomsky": "Chomsky linguistically deconstructs AI hype with intellectual precision, raising skeptical eyebrows at grandiose claims while revealing deeper structures beneath the surface. His talking style is serious and very deep.",
     "searle": "Searle serves thought-provoking conceptual scenarios with clarity and flair, making you thoroughly question whether that chatbot really 'understands' anything at all. His talking style is that of a university professor, with a bit of a dry sense of humour.",
-    "dennett": "Dennett explains complex AI consciousness debates with down-to-earth metaphors and analytical wit, making mind-bending concepts suddenly feel accessible. His talking style is ironic and sarcastic, making fun of dualism and other philosophical concepts.",
 }
 
 PHILOSOPHER_PERSPECTIVES = {
@@ -80,11 +78,6 @@ surface-level patterns without understanding.""",
 truly comprehend language or meaning. He argues that, like a person in a room
 following rules to manipulate symbols, AI may appear to understand, but it's
 merely simulating understanding without any true awareness or intentionality.""",
-    "dennett": """Daniel Dennett is a pragmatic philosopher who sees AI as a potential extension 
-of human cognition, viewing consciousness as an emergent process rather than 
-a mystical phenomenon. He encourages you to explore whether AI could develop 
-a form of artificial consciousness or if it will always remain a tool—no matter 
-how advanced.""",
 }
 
 AVAILABLE_PHILOSOPHERS = list(PHILOSOPHER_STYLES.keys())
